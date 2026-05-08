@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #0d1117;
+  color: #e6edf3;
+  font-family: 'Segoe UI', 'SF Mono', monospace;
+  font-size: 13px;
+}
+
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #484f58; }
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.3; }
+}
+.dot-live {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3fb950;
+  display: inline-block;
+  animation: pulse-dot 1.5s infinite;
+  flex-shrink: 0;
+}
+
+@keyframes row-flash {
+  0%   { background: rgba(63,185,80,0.12); }
+  100% { background: transparent; }
+}
+.row-flash { animation: row-flash 1.2s ease-out; }
+
+/* OI spike badge pulse — used on fire badge when spikeScore >= 70 */
+@keyframes oi-pulse {
+  0%, 100% { box-shadow: 0 0 4px #ff6b3544; opacity: 1; }
+  50%       { box-shadow: 0 0 10px #ff6b35aa; opacity: 0.85; }
+}
